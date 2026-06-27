@@ -6,7 +6,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import useCourseStore from "../app/CourseStore.js";
 import { PuffLoader } from "react-spinners";
 import Badge from "../Components/Badge.jsx";
-import { ADD_USER_API, FETCH_COURSES_API } from "../Constants/API_Constants.js";
+import {
+  ADD_USER_API,
+  API,
+  FETCH_COURSES_API,
+} from "../Constants/API_Constants.js";
 
 const Home = () => {
   // const [userCourses, setUserCourses] = useState(courses);
@@ -28,6 +32,7 @@ const Home = () => {
         });
         getCoursesForUser();
       } catch (error) {
+        console.log(error);
         console.log(error.message);
       }
     };
