@@ -5,7 +5,7 @@ export const REMOVE_COURSE_API = API + "removeCourse/";
 export const FETCH_AUDIO_API = API + "audio";
 export const FETCH_LESSONS_API = API + "getLessons/";
 export const MARK_LESSON_COMPLETE_API = (courseId, moduleId, lessonId) =>
-  API + `course/${courseId}/module/${moduleId}/lesson/${lessonId}`;
+  API + `markComplete/course/${courseId}/module/${moduleId}/lesson/${lessonId}`;
 
 export const FETCH_MODULES_API = API + "getModules/";
 export const ADD_USER_API = API + "addUser";
