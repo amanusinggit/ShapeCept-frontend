@@ -54,7 +54,7 @@ const LessonRenderer = () => {
     audio.current.pause();
   };
   const fetchConclusionAudio = () => {
-    pauseAudio();
+    if (audio.current !== null) pauseAudio();
     setPlaying(false);
     if (audio.current === null && toggleConclusion === false) {
       try {
@@ -143,7 +143,7 @@ const LessonRenderer = () => {
           {
             method: "PATCH",
             headers: {
-              authorization: `Bearer ${await getAccessTokenSilently()}s`,
+              authorization: `Bearer ${await getAccessTokenSilently()}`,
             },
           },
         );
