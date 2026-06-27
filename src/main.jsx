@@ -13,6 +13,7 @@ import LessonRenderer from "./Components/LessonRenderer/LessonRenderer.jsx";
 import { PuffLoader } from "react-spinners";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import SetParams from "./Components/HOC/SetParams.jsx";
+import { API } from "./Constants/API_Constants.js";
 
 const createProtectedRouteComponent = (component, options) => {
   const ProtectedRouteComponent = withAuthenticationRequired(
@@ -33,7 +34,7 @@ createRoot(document.getElementById("root")).render(
       clientId="zMnGMsMpMjkkFTW3MRJ8qDQA7Xudvy8a"
       authorizationParams={{
         redirect_uri: window.location.origin,
-        audience: "http://localhost:3000/",
+        audience: API,
       }}
       cacheLocation="localstorage"
     >
