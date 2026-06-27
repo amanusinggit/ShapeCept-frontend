@@ -1,0 +1,51 @@
+Day 1:
+working on Milestone 4: saw a video on OAuth working.
+Link: https://www.youtube.com/watch?v=VZH_lGxqFYU&t=1s
+Learning:
+1. client app asks resource owner for login using resource provider
+2. resource provider client asks the authorization server of resource provider
+3. authorization server sends a login to client app
+4. resource owner proceeds.
+5. authorization server sends the authorization token to resource provider client, which in turn sends the authorization token to the client app.
+6. client app sends the token to authorization server, which in turn sends the access token
+7. client app sends the access token to resource server
+8. resource server sends the token to authorization sever for verification.
+9. resource servers sends the data to the client app.
+TLDR;
+Client redirects user → Authorization Server
+User logs in & consents
+Auth server redirects back with authorization code
+Client backend exchanges code → access token
+Client uses token → Resource Server
+Resource server validates token → returns data
+Day 2:
+1. Learned More about OAuth 2.0 and OAuth 1.0, SAML, OCID.
+2. Tried using auth0 react sdk for OAuth.
+3. one of the errors -
+"Dev Keys: One or more of your connections are currently using Auth0 development keys and should not be used in production"
+Day 3:
+1. react-router has three modes: declarative, data and framework: currently we are using declarative method in react-router
+2. How to make a protected route through authO: using withAuthentication method, using a factory pattern to create a function that can be used to create multiple protected compoenent or pages
+Day 4: 
+1. Learned about the flow of authentication, also about the tokens: Authorization Code(Exchange Code to get the access token), Access Token(Token for Registered APIs to access ), Client ID(application ID), ID token(Resource Owner ID)
+2. Learned how to get access token, also learned when it is opaque and when it is JWT.
+3. Access Token is for the backend APIs to be protected 
+4. Learned withAuthenticationRequired is used to make protect route but also preserve state for better UX, similar can be achieved by passing appState in the AuthorizationParams
+5. Learned about GRANTS. Not very clear about it 
+6. /Authorize endpoint and /oauth/token endpoint
+[appState, withAutheticationRequired, onRedirectCallback, Authorization Code Exchange, Registering APIs in Dashboard, setting audience to get JWT]
+Day5:
+1. sending the JWT to backend
+2. ISSUE: clicking sign up or sign in sends to home and ig home does not contain the jwt : FIX was too allow permission from auth0 dashboard to the API.
+Day 6:
+Day 7:
+1. creating cards: 
+    a. issues faced: This is the way: "bg-red-500" (static string) ✔️ | This is NOT the way: `bg-${color}-500` (dynamic string) 
+Day 8:
+1. fixing responsiveness
+2. fixing layout type [3/4]: 
+3. use case: we want three column layout: approach flexbox: adding width as w-1/3 but gap introduces a problem in layout, better fix: grid
+
+
+Render vs Remount
+case : resetting all the states on url change: using key property forcing remount making two different comoponents altogether

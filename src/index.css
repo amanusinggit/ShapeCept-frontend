@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+html {
+  font-size: 12px;
+}
+@theme {
+  /* ── Base Surfaces ──────────────────────────────────────────
+     Layer from darkest (page bg) → lightest (elevated card)     */
+  --color-obsidian: #0b0c14; /* bg-obsidian      — page background         */
+  --color-deep: #10111c; /* bg-deep          — secondary sections       */
+  --color-surface: #161727; /* bg-surface       — default card background  */
+  --color-raised: #1d1f33; /* bg-raised        — elevated / hover card    */
+  --color-overlay: #252843; /* bg-overlay       — modal, dropdown backdrop */
+  --color-backdrop: #000000cc;
+
+  /* ── Brand Primary — Electric Indigo ───────────────────────  */
+  --color-brand-dim: #3d4bc4; /* bg/text-brand-dim    — pressed state        */
+  --color-brand-primary: #5b6af5; /* bg/text-brand-primary — main CTA, links     */
+  --color-brand-light: #8b97ff; /* text-brand-light     — on-dark label        */
+  --color-brand-subtle: #5b6af518; /* bg-brand-subtle      — tinted bg, pill      */
+  --color-brand-muted: #5b6af530; /* border-brand-muted   — pill border, divider */
+  --color-brand-glow: #5b6af540; /* shadow / glow color                         */
+
+  /* ── Brand Secondary — Violet ───────────────────────────────  */
+  --color-violet-dim: #6b3ebf; /* pressed                                     */
+  --color-violet-brand: #8b4cf7; /* gradient partner to brand-primary           */
+  --color-violet-light: #b07dff; /* on-dark label                               */
+  --color-violet-subtle: #8b4cf718; /* tinted bg                                   */
+  --color-violet-muted: #8b4cf730; /* border                                      */
+
+  /* ── Accent — Teal Mint (progress, success, completion) ────  */
+  --color-mint-dim: #1bae84; /* deeper mint — pressed                       */
+  --color-mint: #2ddba8; /* progress bars, success badges               */
+  --color-mint-light: #6feacc; /* on-dark mint text                           */
+  --color-mint-subtle: #2ddba812; /* success alert bg                            */
+  --color-mint-muted: #2ddba828; /* success border                              */
+
+  /* ── Accent — Warm Amber (CTAs, warnings, highlights) ──────  */
+  --color-amber-dim: #c4782a; /* pressed amber                               */
+  --color-amber: #f0a855; /* warm CTA button, warning state              */
+  --color-amber-light: #ffca85; /* on-dark amber label                         */
+  --color-amber-subtle: #f0a85515; /* warning alert bg                            */
+  --color-amber-muted: #f0a85530; /* warning border                              */
+
+  /* ── Content / Text ────────────────────────────────────────  */
+  --color-content: #f2ede4; /* text-content      — primary body text       */
+  --color-content-dim: #bdb6ac; /* text-content-dim  — secondary / labels      */
+  --color-content-muted: #7a7670; /* text-content-muted — placeholders, hints    */
+
+  /* ── Borders & Rims ────────────────────────────────────────
+     These use rgba so they work on any dark bg automatically.    */
+  --color-rim: rgba(
+    255,
+    255,
+    255,
+    0.07
+  ); /* border-rim        — default card rim     */
+  --color-rim-strong: rgba(
+    255,
+    255,
+    255,
+    0.13
+  ); /* border-rim-strong — emphasized section   */
+  --color-rim-focus: rgba(
+    91,
+    106,
+    245,
+    0.55
+  ); /* border-rim-focus  — focused input ring   */
+
+  /* ── Status — Danger / Error ───────────────────────────────  */
+  --color-danger: #f05c5c; /* text-danger       — error text, icon        */
+  --color-danger-subtle: #f05c5c15; /* bg-danger-subtle  — error alert bg          */
+  --color-danger-muted: #f05c5c30; /* border-danger-muted — error border          */
+
+  /* ── Status — Success (alias for mint) ─────────────────────  */
+  --color-success: #2ddba8; /* text-success                                */
+  --color-success-subtle: #2ddba812; /* bg-success-subtle                           */
+  --color-success-muted: #2ddba828; /* border-success-muted                        */
+
+  /* ── Status — Warning (alias for amber) ────────────────────  */
+  --color-warning: #f0a855; /* text-warning                                */
+  --color-warning-subtle: #f0a85515; /* bg-warning-subtle                           */
+  --color-warning-muted: #f0a85530; /* border-warning-muted                        */
+
+  /* ── Status — Info (alias for brand) ───────────────────────  */
+  --color-info: #8b97ff; /* text-info                                   */
+  --color-info-subtle: #5b6af518; /* bg-info-subtle                              */
+  --color-info-muted: #5b6af530; /* border-info-muted                           */
+}
+
+/* ===== SAFE COLOR UTILITIES (NO OKLCH) ===== */
+
+/* Violet */
+.border-violet {
+  border-color: #8b5cf6;
+}
+.bg-violet-subtle {
+  background-color: #8b5cf618;
+}
+
+/* Purple */
+.border-purple {
+  border-color: #a855f7;
+}
+.bg-purple-subtle {
+  background-color: #a855f718;
+}
+
+/* Fuchsia */
+.border-fuchsia {
+  border-color: #d946ef;
+}
+.bg-fuchsia-subtle {
+  background-color: #d946ef18;
+}
+
+/* Pink */
+.border-pink {
+  border-color: #ec4899;
+}
+.bg-pink-subtle {
+  background-color: #ec489918;
+}
+
+/* Rose */
+.border-rose {
+  border-color: #f43f5e;
+}
+.bg-rose-subtle {
+  background-color: #f43f5e18;
+}
+
+/* Red */
+.border-red {
+  border-color: #ef4444;
+}
+.bg-red-subtle {
+  background-color: #ef444418;
+}
+
+/* Orange */
+.border-orange {
+  border-color: #f97316;
+}
+.bg-orange-subtle {
+  background-color: #f9731618;
+}
+
+/* Yellow */
+.border-yellow {
+  border-color: #eab308;
+}
+.bg-yellow-subtle {
+  background-color: #eab30818;
+}
+
+/* Lime */
+.border-lime {
+  border-color: #84cc16;
+}
+.bg-lime-subtle {
+  background-color: #84cc1618;
+}
+
+/* Green */
+.border-green {
+  border-color: #22c55e;
+}
+.bg-green-subtle {
+  background-color: #22c55e18;
+}
+
+/* Emerald */
+.border-emerald {
+  border-color: #10b981;
+}
+.bg-emerald-subtle {
+  background-color: #10b98118;
+}
+
+/* Teal */
+.border-teal {
+  border-color: #14b8a6;
+}
+.bg-teal-subtle {
+  background-color: #14b8a618;
+}
+
+/* Cyan */
+.border-cyan {
+  border-color: #06b6d4;
+}
+.bg-cyan-subtle {
+  background-color: #06b6d418;
+}
+
+/* Sky */
+.border-sky {
+  border-color: #0ea5e9;
+}
+.bg-sky-subtle {
+  background-color: #0ea5e918;
+}
+
+/* Blue */
+.border-blue {
+  border-color: #3b82f6;
+}
+.bg-blue-subtle {
+  background-color: #3b82f618;
+}
+
+/* Indigo */
+.border-indigo {
+  border-color: #6366f1;
+}
+.bg-indigo-subtle {
+  background-color: #6366f118;
+}
+
+/* Gray scale */
+.border-slate {
+  border-color: #64748b;
+}
+.bg-slate-subtle {
+  background-color: #64748b18;
+}
+
+.border-gray {
+  border-color: #6b7280;
+}
+.bg-gray-subtle {
+  background-color: #6b728018;
+}
+
+.border-zinc {
+  border-color: #71717a;
+}
+.bg-zinc-subtle {
+  background-color: #71717a18;
+}
+
+.border-neutral {
+  border-color: #737373;
+}
+.bg-neutral-subtle {
+  background-color: #73737318;
+}
+
+.border-stone {
+  border-color: #78716c;
+}
+.bg-stone-subtle {
+  background-color: #78716c18;
+}
+
+.text-black {
+  color: black;
+}
+
+.accent-deep {
+  accent-color: #10111c;
+}
+
+.text-link {
+  color: #193cb8;
+}
