@@ -42,11 +42,11 @@ const Login = () => {
       <div className="md:w-2/4 flex h-[50vh] md:h-full">
         <Logo size="5xl" />
       </div>
-      <div className="m-6 md:m-0 flex justify-center items-end md:items-center gap-6  grow bg-transparent md:bg-obsidian/90">
+      <div className="m-6 md:m-0 flex justify-center items-end md:items-center gap-6  h-[50vh] md:h-full  bg-transparent md:bg-obsidian/90">
         {error && <p>Error: {error.message}</p>}
         <button
           onClick={signup}
-          className="w-full h-[50vh] md:h-full md:w-auto text-content px-6 py-3 rounded-lg border border-rim bg-brand-primary flex gap-2 items-center justify-center  hover:shadow-lg shadow-violet-brand/30 cursor-pointer"
+          className="w-full md:w-auto text-content px-6 py-3 rounded-lg border border-rim bg-brand-primary flex gap-2 items-center justify-center  hover:shadow-lg shadow-violet-brand/30 cursor-pointer"
         >
           Signup
         </button>
