@@ -39,10 +39,10 @@ const Login = () => {
       className="flex h-screen flex-col md:flex-row bg-cover"
       style={{ backgroundImage: `url(${bg_svg})` }}
     >
-      <div className="md:w-2/4 flex h-[50vh] md:h-full">
+      <div className="md:w-2/4 flex h-[50dvh] md:h-full">
         <Logo size="5xl" />
       </div>
-      <div className="m-6 md:m-0 flex justify-center items-end md:items-center gap-6  h-[50vh] md:h-full  bg-transparent md:bg-obsidian/90">
+      <div className="m-6 md:m-0 flex justify-center items-end md:items-center gap-6  h-[50dvh] md:h-full  bg-transparent md:bg-obsidian/90">
         {error && <p>Error: {error.message}</p>}
         <button
           onClick={signup}
