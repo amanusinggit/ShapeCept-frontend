@@ -46,7 +46,7 @@ const Login = () => {
         {error && <p>Error: {error.message}</p>}
         <button
           onClick={signup}
-          className="w-full md:w-auto text-content px-6 py-3 rounded-lg border border-rim bg-brand-primary flex gap-2 items-center justify-center  hover:shadow-lg shadow-violet-brand/30 cursor-pointer"
+          className="w-full h-[50vh] md:h-full md:w-auto text-content px-6 py-3 rounded-lg border border-rim bg-brand-primary flex gap-2 items-center justify-center  hover:shadow-lg shadow-violet-brand/30 cursor-pointer"
         >
           Signup
         </button>

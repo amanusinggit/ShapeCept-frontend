@@ -18,7 +18,11 @@ const LessonExporter = ({ componentType, lesson }) => {
   };
   return (
     <>
-      <button onClick={downloadPdf} className="cursor-pointer">
+      <button
+        onClick={downloadPdf}
+        disabled={loading}
+        className="cursor-pointer"
+      >
         <Badge>
           <i class="fa-solid fa-file-arrow-down"></i>
           <span className="truncate">Download Lesson Pdf</span>

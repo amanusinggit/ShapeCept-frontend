@@ -58,6 +58,7 @@ const SearchBox = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+            disabled={loading}
             onClick={fetchCourse}
             className="bg-violet-brand text-content rounded-lg text-center px-4 py-2 font-semibold"
           >

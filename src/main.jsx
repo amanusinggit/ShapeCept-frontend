@@ -58,6 +58,5 @@ createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </Auth0Provider>
-    , //{" "}
   </StrictMode>,
 );
